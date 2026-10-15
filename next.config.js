@@ -1,20 +1,12 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   /* config options here */
   experimental: {
-    agentFeedback: true,
+    // Enable PPR if you are using Next.js 14/15 experimental PPR features
+    ppr: 'incremental', 
   },
-  cacheComponents: true,
-  partialPrefetching: true,
-  turbopack: {
-    rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
-      },
-    },
-  },
+  // Ensure Next.js allows loading client packets from public/
+  reactStrictMode: true,
 };
 
-export default nextConfig;
+module.exports = nextConfig;
