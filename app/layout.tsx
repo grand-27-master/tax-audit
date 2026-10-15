@@ -1,5 +1,6 @@
-import './globals.css';
 import type { Metadata } from 'next';
+// @ts-expect-error Next.js handles global CSS imports at build time.
+import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Okafor-Lindqvist Tax Workpaper Suite',
